@@ -156,7 +156,7 @@ Navigate to the "Search" tab. In the "New Search" box, enter "index=gcp", making
 
 ## Limitations
 
-* External credential configuration is not officially supported on Splunk Cloud on AWS. Support for Workload Identity Federation is limited to self-managed Splunk hosted on AWS or Azure at this time.
+* External credential configuration is not officially supported on Splunk Cloud. Support for Workload Identity Federation is limited to self-managed Splunk hosted on AWS or Azure at this time.
 
 ## Resources
 
