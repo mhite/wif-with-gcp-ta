@@ -154,6 +154,10 @@ Navigate to the "Search" tab. In the "New Search" box, enter "index=gcp", making
 
 ![](./images/validate-logs.png)
 
+## Limitations
+
+* External credential configuration is not officially supported on Splunk Cloud on AWS. Support for Workload Identity Federation is limited to self-managed Splunk hosted on AWS or Azure at this time.
+
 ## Resources
 
 * [Workload Identity Federation documentation](https://cloud.google.com/iam/docs/workload-identity-federation)
