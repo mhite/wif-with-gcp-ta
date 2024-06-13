@@ -1,4 +1,4 @@
-# Workload Identity Federation with the Splunk Add-on for Google Cloud Platform
+# Deploying Workload Identity Federation between AWS and GCP using the Splunk Add-on for Google Cloud Platform
 
 ## Introduction
 
