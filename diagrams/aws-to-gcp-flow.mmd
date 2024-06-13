@@ -3,7 +3,6 @@ box AWS
     participant EC2 workload
     participant Metadata Server
     participant sts.{region}.amazonaws.com
-
 end
 box GCP
     participant sts.googleapis.com
@@ -11,8 +10,10 @@ box GCP
     participant pubsub.googleapis.com
 end
     EC2 workload->>Metadata Server:Retrieve EC2 instance profile ambient credential
-    EC2 workload->>sts.googleapis.com: Exchange EC2 profile credential for GCP federated access token
+    Metadata Server-->>EC2 workload:Ambient credential response
+    EC2 workload->>sts.googleapis.com:Exchange EC2 profile credential for GCP federated access token
     sts.googleapis.com-->>sts.{region}.amazonaws.com:Verify EC2 profile credential
-    sts.googleapis.com->>EC2 workload:Federated STS token response
+    sts.googleapis.com-->>EC2 workload:Federated STS token response
     EC2 workload->>iamcredentials.googleapis.com:Exchange STS federated token for short-lived service account token ("service account impersonation")
+    iamcredentials.googleapis.com-->>EC2 workload:Short-lived service account token response
     EC2 workload->>pubsub.googleapis.com:Access Pub/Sub API using service account token
