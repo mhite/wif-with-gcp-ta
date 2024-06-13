@@ -42,7 +42,7 @@ The following diagram outlines the IAM component authentication sequence using f
 
 Select an authentication sequence before proceeding. Use "service account impersonation" sequence if unsure.
 
-#### Service account impersonation sequence (recommended)
+#### Option 1: Service account impersonation sequence (recommended)
 
 This is the recommended authenticaiton sequence as it provides the widest compatability with Google Cloud APIs.
 
@@ -146,7 +146,7 @@ Download the generated credential configuration file. It will be uploaded to the
 }
 ```
 
-#### Native STS token sequence
+#### Option 2: Native STS token sequence
 
 This authentication sequence does not provide full compatability with all Google Cloud APIs. However, it should work with most Splunk Add-on for Google Cloud Platform inputs except Pub/Sub Lite.
 
