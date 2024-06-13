@@ -18,11 +18,11 @@ This article outlines the steps required to configure the add-on and prepare the
 
 ## Authentication Sequence
 
-There are two Workload Identity Federation authentication sequences possible. The first authentication sequence requires the use of service account impersonation in the GCP project. This method will provide compatability with all Google Cloud APIs and hence all inputs available in the Splunk Add-on for Google Cloud Platform will function as expected.
+There are two Workload Identity Federation authentication sequences possible. The first authentication sequence requires the use of service account impersonation in the GCP project. This method will provide compatibility with all Google Cloud APIs and hence all inputs available in the Splunk Add-on for Google Cloud Platform will function as expected.
 
 The second method does not require service account impersonation and instead uses the federated STS token directly with Google Cloud APIs. Although most Google Cloud APIs support Workload Identity Federation, some APIs such as the Pub/Sub Lite API have [limitations](https://cloud.google.com/iam/docs/federated-identity-supported-services) and are not compatible.
 
-For the widest guaranteed API compatability, use the full service account impersonation authentication sequence. As more Google Cloud APIs continue to provide federated STS token compatability, this recommendation is subject to change.
+For the widest guaranteed API compatibility, use the full service account impersonation authentication sequence. As more Google Cloud APIs continue to provide federated STS token compatibility, this recommendation is subject to change.
 
 ### Service account impersonation sequence
 
@@ -44,7 +44,7 @@ Select an authentication sequence before proceeding. Use "service account impers
 
 #### Option 1: Service account impersonation sequence (recommended)
 
-This is the recommended authenticaiton sequence as it provides the widest compatability with Google Cloud APIs.
+This is the recommended authentication sequence as it provides the widest compatibility with Google Cloud APIs.
 
 ##### Prepare environment variables
 
@@ -148,7 +148,7 @@ Download the generated credential configuration file. It will be uploaded to the
 
 #### Option 2: Native STS token sequence
 
-This authentication sequence does not provide full compatability with all Google Cloud APIs. However, it should work with most Splunk Add-on for Google Cloud Platform inputs except Pub/Sub Lite.
+This authentication sequence does not provide full compatibility with all Google Cloud APIs. However, it should work with most Splunk Add-on for Google Cloud Platform inputs except Pub/Sub Lite.
 
 ##### Prepare environment variables
 
@@ -246,7 +246,7 @@ Navigate to the "Inputs". Click the "Create New Input" button. Select "Cloud Pub
 
 ![](./images/create-new-input.png)
 
-A new modal for configurating the Pub/Sub input will appear.
+A new modal for configuring the Pub/Sub input will appear.
 
 ![](./images/pubsub-input.png)
 
@@ -254,7 +254,7 @@ Enter a name for the input, ie. "pubsub-log". In the credential section, select 
 
 ### Validate logs
 
-Navigate to the "Search" tab. In the "New Search" box, enter "index=gcp", making sure to replace "gcp" with the index supplied in the input configuration step. Select a reasonable timeframe in the timepicker, ie. 24 hours. You should see logs being ingested.
+Navigate to the "Search" tab. In the "New Search" box, enter "index=gcp", making sure to replace "gcp" with the index supplied in the input configuration step. Select a reasonable time frame in the time picker, ie. 24 hours. You should see logs being ingested.
 
 ![](./images/validate-logs.png)
 
